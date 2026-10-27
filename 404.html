@@ -5,11 +5,13 @@
 (function(){
   var p=location.pathname;
   if(p.indexOf("/evoila-deck-generator")===0){
-    location.replace("/evoila-marketing-hub"+p.slice("/evoila-deck-generator".length)+location.search+location.hash);
+    var rest=p.slice("/evoila-deck-generator".length);
+    if(rest===""||rest==="/"||rest==="/index.html"){rest="/deck/";}
+    location.replace("/evoila-marketing-hub"+rest+location.search+location.hash);
   }else{
-    location.replace("/evoila-marketing-hub/hub/");
+    location.replace("/evoila-marketing-hub/");
   }
 })();
 </script>
 <style>body{font:16px system-ui,sans-serif;background:#F6F0EB;color:#1F1534;display:grid;place-items:center;min-height:100vh;margin:0}a{color:#0D09B5}</style>
-</head><body><p>The evoila marketing hub has moved. <a href="/evoila-marketing-hub/hub/">Go to the hub</a>.</p></body></html>
+</head><body><p>The evoila marketing hub has moved. <a href="/evoila-marketing-hub/">Go to the hub</a>.</p></body></html>
